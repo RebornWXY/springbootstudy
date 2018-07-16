@@ -1,0 +1,9 @@
+#控制台日志颜色输出配置
+spring:
+  output:
+    ansi:
+      enabled: detect #检测IDE支持的话会进行颜色输出
+  #项目logo配置
+  banner:
+    charset: UTF-8
+    location: classpath:banner.txt
