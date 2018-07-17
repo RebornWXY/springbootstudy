@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @description 类说明:
  */
 @RestController
+@RequestMapping("/hello")
 public class HelloController {
 	
-	@RequestMapping(value="/hello",method=RequestMethod.GET)
-	public Object hello() {
+	@RequestMapping(value="/testHello",method=RequestMethod.GET)
+	public Object getHello() {
 		return "Hello SpringBoot!";
 	}
 	

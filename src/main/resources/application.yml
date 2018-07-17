@@ -2,8 +2,17 @@
 spring:
   output:
     ansi:
-      enabled: detect #检测IDE支持的话会进行颜色输出
+      enabled: detect #检测IDE支持的话会进行颜色输出。你也可以安装插件。
   #项目logo配置
   banner:
     charset: UTF-8
     location: classpath:banner.txt
+  #配置devtools。一般不用配置，默认就好。这里只是学习案例。
+  devtools:
+    restart:
+      enabled: true
+      exclude: META-INF/maven/**,META-INF/resources/**,resources/**,static/**,public/**,templates/**,**/*Test.class,**/*Tests.class,git.properties,META-INF/build-info.properties#默认修改不重启项目的路径
+server:
+  servlet:
+    #配置项目访问前置路径
+    context-path: /springbootstudy
