@@ -29,6 +29,22 @@ spring:
     expose-session-attributes: true
     request-context-attribute: request
     suffix: .ftl
+#########################################
+#
+#   SpringBoot整合Thymeleaf的相关配置
+#
+#########################################
+  thymeleaf:
+    enabled: true
+    cache: false
+    check-template: true
+    encoding: UTF-8
+    mode: HTML
+    servlet:
+      content-type: text/html; charset=utf-8
+    prefix: classpath:/templates/thymeleaf
+    suffix: .html
+
 #4.配置该项目的访问路径和服务器tomcat的端口号，URI的编码
 server:
   servlet:
