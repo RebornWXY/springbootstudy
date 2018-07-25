@@ -38,7 +38,19 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
+		
+		<!-- SpringBoot添加freemarker模板引擎依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		
+		<!-- SpringBoot添加thymeleaf模板引擎依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
 		<!-- SpringBoot添加热部署依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
