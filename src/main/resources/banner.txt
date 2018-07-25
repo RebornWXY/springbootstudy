@@ -16,5 +16,5 @@
     \/_____/\/__/ \/___/  \/__,_ /`/___/> \
                                      /\___/
                                      \/__/ 
-SpringBoot-Version: ${spring-boot.formatted-version}
-Author-CSDN-Link: https://blog.csdn.net/qq_36874292 
+Author-CSDN-Link:		https://blog.csdn.net/qq_36874292
+SpringBoot-Version:		${spring-boot.formatted-version} 

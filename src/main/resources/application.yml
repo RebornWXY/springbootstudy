@@ -2,7 +2,7 @@
 spring:
   output:
     ansi:
-      enabled: detect #检测IDE支持的话会进行颜色输出。你也可以安装插件。
+      enabled: always #进行颜色输出,容易查找。你也可以安装插件。
   #项目logo配置
   banner:
     charset: UTF-8
