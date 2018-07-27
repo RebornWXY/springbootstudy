@@ -19,7 +19,7 @@ spring:
 #########################################
   freemarker: 
     template-loader-path:
-    - classpath:/templates/
+    - classpath:/templates/freemarker
     enabled: true
     cache: false
     charset: UTF-8
