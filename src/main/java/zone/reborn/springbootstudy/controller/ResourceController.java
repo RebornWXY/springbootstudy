@@ -20,13 +20,13 @@ public class ResourceController {
 	@Autowired
 	private Resource resource;
 
-	@GetMapping(value="/testResource")
+	@GetMapping(value = "/testResource")
 	public Resource getResource() {
-		
+
 		Resource newResource = new Resource();
 		BeanUtils.copyProperties(resource, newResource);
 		return newResource;
-		
+
 	}
 
 }

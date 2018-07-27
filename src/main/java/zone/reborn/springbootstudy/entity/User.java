@@ -20,7 +20,7 @@ public class User {
 
 	private Integer age;
 
-	@JsonFormat(pattern = "yy-MM-dd HH:mm:ss a", locale = "zh", timezone = "GMT+8")//yy-MM-dd HH:mm:ss
+	@JsonFormat(pattern = "yy-MM-dd HH:mm:ss a", locale = "zh", timezone = "GMT+8") // yy-MM-dd HH:mm:ss
 	private Date birthday;
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)

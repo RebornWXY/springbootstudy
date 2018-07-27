@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Thymeleaf 常用标签测试</title>
+		
+		<!-- <script th:src="@{/static/js/test1.js}"></script> -->
+		
+	</head>
+	<body>
+		<div>
+			用户姓名：<input th:id="${user.name}" th:name="${user.name}" th:value="${user.name}" />
+			<br/>
+			用户年龄：<input th:id="${user.age}" th:name="${user.age}" th:value="${user.age}" />
+			<br/>
+			用户生日：<input th:id="${user.birthday}" th:name="${user.birthday}" th:value="${user.birthday}" />
+			<br/>
+			用户生日：<input th:value="${#dates.format(user.birthday,'yyyy-MM-dd hh:mm:ss')}" />
+			<br/>
+		</div>
+		
+		<br/>
+		
+		<div th:object="${user}">
+			用户姓名：<input th:id="*{name}" th:name="*{name}" th:value="*{name}" />
+			<br/>
+			用户年龄：<input th:value="*{age}" />
+			<br/>
+			用户生日：<input th:value="*{birthday}" />
+			<br/>
+		</div>
+		<br/>
+		
+		
+		text与utext区别：<br/>
+		<span th:text="${user.desc}" >abc</span>
+		<br/>
+		<span th:utext="${user.desc}" >abc</span>
+		<br/>
+		
+		
+		URL测试<br/>
+		<a href="https://blog.csdn.net/qq_36874292">reborn</a>
+		<br/>
+		<a th:href="@{https://blog.csdn.net/qq_36874292}">reborn</a>
+		<br/>
+		
+		form表单测试<br/>
+		<form th:action="@{/thymeleaf/postform}" th:object="${user}" method="post" th:method="post">
+			<input type="text" th:field="*{name}" />
+			<input type="text" th:field="*{age}" />
+			<input type="submit" value="提交" />
+		</form>
+		<br/>
+		
+		th:if标签测试<br/>
+		<div th:if="${user.age}==18">十八岁的天空</div>
+		<div th:if="${user.age} gt 18">你老了</div>
+		<div th:if="${user.age lt 18}">你还年轻</div>
+		<div th:if="${user.age} ge 18">>=18</div>
+		<div th:if="${user.age} le 18"><=18</div>
+		<br/>
+
+		
+		th:selected标签测试<br/>
+		<select>
+			<option th:selected="${user.name eq 'reborn'}">reborn</option>
+			<option th:selected="${user.name eq 'reborn1'}">reborn1</option>
+			<option th:selected="${user.name eq 'reborn2'}">reborn2</option>
+		</select>
+		<br/>
+		
+		
+		th:each标签测试<br/>
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>备注</th>
+				<th>生日</th>
+			</tr>
+			<tr th:each="person:${userList}">
+				<td th:text="${person.name}" />
+				<td th:text="${person.age}" />
+				<td th:text="${person.age le 18} ? 你老了:你很年轻 " >18岁</td>
+				<td th:text="${#dates.format(person.birthday,'yyyy-MM-dd')}" />
+			</tr>
+		</table>
+		<br/>
+		
+		th:switch标签的测试<br/>
+		<div th:switch="${user.name}">
+			<p th:case="reborn">超级管理员</p>
+			<p th:case="rose1">普通管理员</p>
+			<p th:case="#{roses.mannger}">mannger</p>
+			<p th:case="#{roses.supermannger}">superAdmin</p>
+			<p th:case="*">其他用户</p>
+		</div>
+		
+	</body>
+</html>

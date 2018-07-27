@@ -14,21 +14,21 @@ import zone.reborn.springbootstudy.configuration.Resource;
  * @Description 类描述
  */
 @Controller
-@RequestMapping(value="/freemarker")
+@RequestMapping(value = "/freemarker")
 public class FreemarkerController {
-	
+
 	@Autowired
 	private Resource resource;
-	
-	@GetMapping(value="/index")
+
+	@GetMapping(value = "/index")
 	public String index(ModelMap mm) {
 		mm.addAttribute("resource", resource);
 		return "/freemarker/index";
 	}
-	
-	@GetMapping(value="/center")
+
+	@GetMapping(value = "/center")
 	public String center(ModelMap mm) {
 		return "/freemarker/center/center";
 	}
-	
+
 }

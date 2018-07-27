@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
-	
-	@RequestMapping(value="/testHello",method=RequestMethod.GET)
+
+	@RequestMapping(value = "/testHello", method = RequestMethod.GET)
 	public Object getHello() {
 		return "Hello SpringBoot!";
 	}
-	
+
 }

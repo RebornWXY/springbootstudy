@@ -44,8 +44,22 @@ spring:
       content-type: text/html; charset=utf-8
     prefix: classpath:/templates/thymeleaf
     suffix: .html
-
-#4.配置该项目的访问路径和服务器tomcat的端口号，URI的编码
+  #配置静态文件路径
+  mvc:
+    static-path-pattern: /static/**   #一定要加**，不然坑死你
+###########################################################
+#
+#   SpringBoot通过application.yml读取配置文件给thymeleaf使用
+#
+###########################################################  
+  messages:
+    fallback-to-system-locale: true  
+    basename: i18n/messages
+    cache-duration:
+      seconds: 60
+    encoding: UTF-8
+    
+#配置该项目的访问路径和服务器tomcat的端口号，URI的编码；（服务器相关的配置）
 server:
   servlet:
     context-path: /springbootstudy

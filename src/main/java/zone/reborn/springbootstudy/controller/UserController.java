@@ -18,14 +18,14 @@ import zone.reborn.springbootstudy.entity.User;
 public class UserController {
 
 	@RequestMapping(value = "/testUser", method = RequestMethod.GET)
-	//@ResponseBody
+	// @ResponseBody
 	public Object getUser() {
 		User user = new User();
 		user.setName("reborn");
 		user.setPassword("reborn");
 		user.setAge(18);
 		user.setBirthday(new Date());
-		//user.setDesc("MVC模式的前端请求返回配置。");
+		// user.setDesc("MVC模式的前端请求返回配置。");
 		return user;
 	}
 
