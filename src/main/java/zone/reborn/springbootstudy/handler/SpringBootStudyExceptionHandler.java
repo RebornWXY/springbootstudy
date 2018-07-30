@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice
 public class SpringBootStudyExceptionHandler {
 
-	public static final String SPRINGBOOTSTUDY_ERROR_VIEWNAME = "/error";
+	public static final String SPRINGBOOTSTUDY_ERROR_VIEWNAME = "error";
 
 	@ExceptionHandler(value = Exception.class)
 	public Object errorHandler(HttpServletRequest request, HttpServletResponse response, Exception e) {
@@ -26,6 +26,8 @@ public class SpringBootStudyExceptionHandler {
 		mv.addObject("exception", e);
 		mv.addObject("url", request.getRequestURL());
 		mv.setViewName(SPRINGBOOTSTUDY_ERROR_VIEWNAME);
+		// mv.setViewName("/center/center.ftl");//不知道为什么，两个模板同时开启，始终加载不了freemarker的视图，等待考究
+		// mv.setViewName("/center/center.html");
 		return mv;
 	}
 

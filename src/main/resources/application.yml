@@ -42,7 +42,7 @@ spring:
     mode: HTML
     servlet:
       content-type: text/html; charset=utf-8
-    prefix: classpath:/templates/thymeleaf
+    prefix: classpath:/templates/thymeleaf/
     suffix: .html
   #配置静态文件路径
   mvc:

@@ -14,6 +14,7 @@ public class ErrorController {
 
 	@RequestMapping(value = "/testError")
 	public void testError() {
+		@SuppressWarnings("unused")
 		int a = 9 / 0;
 	}
 
