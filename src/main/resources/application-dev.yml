@@ -1,0 +1,36 @@
+###########################################################
+#
+#   SpringBoot整合mybatis，generate，pagehelper
+#   参考链接：https://github.com/abel533/MyBatis-Spring-Boot
+#
+########################################################### 
+mybatis:
+  type-aliases-package: zone.reborn.springbootstudy.entity
+  mapper-locations:
+  - classpath:mapper/*.xml
+  
+mapper:
+  mappers:
+  - zone.reborn.springbootstudy.util.MyMapper
+  not-empty: false
+  identity: MYSQL
+  
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+###########################################################
+#
+#   配置数据源
+#
+########################################################### 
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbgirl?useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 10

@@ -58,6 +58,10 @@ spring:
     cache-duration:
       seconds: 60
     encoding: UTF-8
+  #激活使用的配置文件联合使用dev为主
+  profiles:
+    active:
+    - dev
     
 #配置该项目的访问路径和服务器tomcat的端口号，URI的编码；（服务器相关的配置）
 server:
@@ -65,4 +69,5 @@ server:
     context-path: /springbootstudy
   tomcat:
     uri-encoding: UTF-8
-  port: 8080
+  port: 8888
+  
