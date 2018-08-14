@@ -23,4 +23,5 @@ public interface SysUserService {
 
 	List<SysUser> selecPaged(SysUser sysUser, Integer page, int pageSize);
 
+	SysUser queyUserByIdCustomize(int id);
 }

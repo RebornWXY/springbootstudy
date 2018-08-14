@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zone.reborn.springbootstudy.mapper.SysUserMapperCustomize">
+	
+	<resultMap id="BaseResultMap" type="zone.reborn.springbootstudy.pojo.SysUser">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="NAME" jdbcType="VARCHAR" property="name" />
+		<result column="AGE" jdbcType="INTEGER" property="age" />
+	</resultMap>
+
+	<select id="queryUserSimplyInfoById" resultType="zone.reborn.springbootstudy.pojo.SysUser"  parameterType="java.lang.Integer">
+		SELECT
+			ID,NAME,AGE  
+		FROM 
+			`sys_user`
+		WHERE
+			id = #{id}
+	</select>
+	
+</mapper>

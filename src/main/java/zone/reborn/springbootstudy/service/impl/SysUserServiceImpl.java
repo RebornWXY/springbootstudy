@@ -12,6 +12,7 @@ import com.github.pagehelper.PageHelper;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
 import zone.reborn.springbootstudy.mapper.SysUserMapper;
+import zone.reborn.springbootstudy.mapper.SysUserMapperCustomize;
 import zone.reborn.springbootstudy.pojo.SysUser;
 import zone.reborn.springbootstudy.service.SysUserService;
 
@@ -26,7 +27,10 @@ public class SysUserServiceImpl implements SysUserService {
 
 	@Autowired
 	private SysUserMapper sysUserMapper;
-
+	
+	@Autowired
+	private SysUserMapperCustomize mapperCustomize;
+	
 	public int insert(SysUser sysUser) {
 		return sysUserMapper.insert(sysUser);
 	}
@@ -66,6 +70,11 @@ public class SysUserServiceImpl implements SysUserService {
 		List<SysUser> sysUserList = sysUserMapper.selectByExample(example);
 		
 		return sysUserList;
+	}
+
+	@Override
+	public SysUser queyUserByIdCustomize(int id) {
+		return mapperCustomize.queryUserSimplyInfoById(id);
 	}
 
 }

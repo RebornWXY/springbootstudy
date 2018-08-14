@@ -61,5 +61,10 @@ public class SysUserController {
 
 		return sysUserService.selecPaged(sysUser, page, pageSize);
 	}
-
+	
+	@GetMapping(value = "/queryCustomize")
+	public SysUser queryUserByIdCustomize(int id) {
+		return sysUserService.queyUserByIdCustomize(id);
+	}
+	
 }
