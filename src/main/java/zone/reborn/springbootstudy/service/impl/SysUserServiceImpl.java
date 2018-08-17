@@ -41,11 +41,13 @@ public class SysUserServiceImpl implements SysUserService {
 	}
 
 	@Override
+	// @Transactional(propagation=Propagation.REQUIRED)
 	public int deleteByPrimaryKey(int id) {
 		return sysUserMapper.deleteByPrimaryKey(id);
 	}
 
 	@Override
+	// @Transactional(propagation=Propagation.SUPPORTS)
 	public SysUser selectByPrimaryKey(int id) {
 		return sysUserMapper.selectByPrimaryKey(id);
 	}

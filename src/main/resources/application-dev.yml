@@ -14,7 +14,7 @@ mybatis:
 #  - zone.reborn.springbootstudy.utils.MyMapper
 #  not-empty: false
 #  identity: MYSQL
-  
+
 pagehelper:
   helper-dialect: mysql
   reasonable: true
@@ -35,3 +35,25 @@ spring:
     hikari:
       maximum-pool-size: 10
       idle-timeout: 6
+      
+      
+
+###########################################################
+#
+#   redis配置
+#
+########################################################### 
+  redis:
+    ssl: false
+    host: 127.0.0.1
+    database: 1
+    port: 6379
+    password: 
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 1000
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+          
