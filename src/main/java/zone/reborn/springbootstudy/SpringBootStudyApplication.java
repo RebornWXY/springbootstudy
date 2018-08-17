@@ -2,6 +2,7 @@ package zone.reborn.springbootstudy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -11,11 +12,14 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @description 类说明:
  */
 @SpringBootApplication
+// 扫描mybatis mapper包
 @MapperScan(basePackages = "zone.reborn.springbootstudy.mapper")
+// 开启定时任务
+@EnableScheduling
 public class SpringBootStudyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootStudyApplication.class, args);
 	}
-	
+
 }

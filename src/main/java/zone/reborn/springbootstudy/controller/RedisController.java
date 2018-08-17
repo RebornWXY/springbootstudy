@@ -48,7 +48,6 @@ public class RedisController {
 		return stringRedisTemplate.opsForValue().get("reborn:user");
 	}
 	
-	
 	@RequestMapping(value = "/test3")
 	public List<SysUser> redisTest3() {
 		ArrayList<SysUser> userList = new ArrayList<>();
