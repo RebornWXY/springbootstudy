@@ -20,7 +20,7 @@ spring:
   freemarker: 
     template-loader-path:
     - classpath:/templates/freemarker
-    enabled: true
+    enabled: false
     cache: false
     charset: UTF-8
     check-template-location: true
@@ -70,4 +70,4 @@ server:
   tomcat:
     uri-encoding: UTF-8
   port: 8888
-  
+    
